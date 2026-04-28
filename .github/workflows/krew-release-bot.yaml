@@ -1,7 +1,6 @@
 name: krew-release-bot
 on:
-  release:
-    types: [published]
+  workflow_dispatch: {}
 jobs:
   run-krew-release-bot:
     runs-on: ubuntu-latest
@@ -9,3 +8,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Update new version in krew-index
       uses: rajatjindal/krew-release-bot@v0.0.38
+      with:
+        krew_template_file: /dev/null
